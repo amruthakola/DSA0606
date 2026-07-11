@@ -1,0 +1,742 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Sheet1 (monthly sales)' inline='true' name='federated.01dxj5s0qse23917qtuq81tptof0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='monthly sales' name='excel-direct.0g72o190fq1uen1ex7q781x914f9'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/amrut/OneDrive/Desktop/monthly sales.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0g72o190fq1uen1ex7q781x914f9' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:B6:no:A1:B6:0' header='yes' outcome='6'>
+            <column datatype='string' name='Month' ordinal='0' />
+            <column datatype='integer' name='Sales(in$)' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B6:no:A1:B6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_01F6861720BD488EA8FF4C8F6D2B87EE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales(in$)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales(in$)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Sales(in$)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Sheet1_01F6861720BD488EA8FF4C8F6D2B87EE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Sheet1' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_01F6861720BD488EA8FF4C8F6D2B87EE]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/amrut/AppData/Local/Temp/TableauTemp/#TableauTemp_00omgdj04nmv2g15b26aa1pfeccr.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/11/2026 05:05:09 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Month</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Month</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sales(in$)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Sales(in$)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sales(in$)</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Sheet1' id='Sheet1_01F6861720BD488EA8FF4C8F6D2B87EE'>
+            <properties context=''>
+              <relation connection='excel-direct.0g72o190fq1uen1ex7q781x914f9' name='Sheet1' table='[Sheet1$]' type='table'>
+                <columns gridOrigin='A1:B6:no:A1:B6:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Month' ordinal='0' />
+                  <column datatype='integer' name='Sales(in$)' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Scatter Data (Scatter_Plot_Monthly_Sales_192524270)' inline='true' name='federated.0y9vjye0yaa3ck19ewef705fgfbz' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Scatter_Plot_Monthly_Sales_192524270' name='excel-direct.1h9vwj71em65rv1cztiqy1qv0o91'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/amrut/Downloads/Scatter_Plot_Monthly_Sales_192524270.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1h9vwj71em65rv1cztiqy1qv0o91' name='Scatter Data' table='[&apos;Scatter Data$&apos;]' type='table'>
+          <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+            <column datatype='string' name='Month' ordinal='0' />
+            <column datatype='integer' name='Advertising Budget ($)' ordinal='1' />
+            <column datatype='integer' name='Sales ($)' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Scatter Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C6:no:A1:C6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[Scatter Data]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Advertising Budget ($)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Advertising Budget ($)]</local-name>
+            <parent-name>[Scatter Data]</parent-name>
+            <remote-alias>Advertising Budget ($)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales ($)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales ($)]</local-name>
+            <parent-name>[Scatter Data]</parent-name>
+            <remote-alias>Sales ($)</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Scatter Data' datatype='table' name='[__tableau_internal_object_id__].[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/amrut/AppData/Local/Temp/TableauTemp/#TableauTemp_057x0fu09xdqhi1e5e9kp0nvro6o.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/11/2026 06:03:27 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Month</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Month</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Scatter Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Advertising Budget ($)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Advertising Budget ($)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Advertising Budget ($)</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Scatter Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sales ($)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Sales ($)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sales ($)</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Scatter Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Scatter Data_622D71D0F6404D1595C887841BEBAEF7]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Scatter Data' id='Scatter Data_622D71D0F6404D1595C887841BEBAEF7'>
+            <properties context=''>
+              <relation connection='excel-direct.1h9vwj71em65rv1cztiqy1qv0o91' name='Scatter Data' table='[&apos;Scatter Data$&apos;]' type='table'>
+                <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Month' ordinal='0' />
+                  <column datatype='integer' name='Advertising Budget ($)' ordinal='1' />
+                  <column datatype='integer' name='Sales ($)' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_F79A1F69E3894F19828C210B574FC5F9]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard (192524270)' type='sheet' worksheet='line (192524270)' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard (192524270)' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='bar(192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (monthly sales)' name='federated.01dxj5s0qse23917qtuq81tptof0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01dxj5s0qse23917qtuq81tptof0'>
+            <column datatype='string' name='[Month]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Sales(in$)]' role='measure' type='quantitative' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales(in$)]' derivation='Sum' name='[sum:Sales(in$):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.01dxj5s0qse23917qtuq81tptof0].[sum:Sales(in$):qk]</rows>
+        <cols>[federated.01dxj5s0qse23917qtuq81tptof0].[none:Month:nk]</cols>
+      </table>
+      <simple-id uuid='{CA3610FB-1457-4CDA-BDB7-8AD6D7C9FCC6}' />
+    </worksheet>
+    <worksheet name='line (192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (monthly sales)' name='federated.01dxj5s0qse23917qtuq81tptof0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.01dxj5s0qse23917qtuq81tptof0'>
+            <column datatype='string' name='[Month]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Sales(in$)]' role='measure' type='quantitative' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales(in$)]' derivation='Sum' name='[sum:Sales(in$):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.01dxj5s0qse23917qtuq81tptof0].[none:Month:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;January&quot;</bucket>
+              <bucket>&quot;Febrauary&quot;</bucket>
+              <bucket>&quot;March&quot;</bucket>
+              <bucket>&quot;April&quot;</bucket>
+              <bucket>&quot;May&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.01dxj5s0qse23917qtuq81tptof0].[sum:Sales(in$):qk]' field-type='quantitative' max='88088' min='-57037' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <text column='[federated.01dxj5s0qse23917qtuq81tptof0].[sum:Sales(in$):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.01dxj5s0qse23917qtuq81tptof0].[sum:Sales(in$):qk]</rows>
+        <cols>[federated.01dxj5s0qse23917qtuq81tptof0].[none:Month:nk]</cols>
+      </table>
+      <simple-id uuid='{7913C030-5F8C-42FB-AA2D-A5DFA6DE72E2}' />
+    </worksheet>
+    <worksheet name='scatter plot (192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Scatter Data (Scatter_Plot_Monthly_Sales_192524270)' name='federated.0y9vjye0yaa3ck19ewef705fgfbz' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0y9vjye0yaa3ck19ewef705fgfbz'>
+            <column datatype='integer' name='[Advertising Budget ($)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Month]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Sales ($)]' role='measure' type='quantitative' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Advertising Budget ($)]' derivation='Sum' name='[sum:Advertising Budget ($):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sales ($)]' derivation='Sum' name='[sum:Sales ($):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0y9vjye0yaa3ck19ewef705fgfbz].[none:Month:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0y9vjye0yaa3ck19ewef705fgfbz].[sum:Sales ($):qk]</rows>
+        <cols>[federated.0y9vjye0yaa3ck19ewef705fgfbz].[sum:Advertising Budget ($):qk]</cols>
+      </table>
+      <simple-id uuid='{D3930D1C-D0AE-420C-B4B8-5394990967B6}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard (192524270)'>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98140' id='3' name='line (192524270)' w='25538' x='73231' y='930'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='98140' id='5' name='bar(192524270)' w='39384' x='1231' y='930'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='98140' id='6' name='scatter plot (192524270)' w='32616' x='40615' y='930'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='10' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='9' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='280' h='98140' id='5' is-fixed='true' name='bar(192524270)' w='39384' x='1231' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98140' id='6' is-fixed='true' name='scatter plot (192524270)' w='32616' x='40615' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98140' id='3' is-fixed='true' name='line (192524270)' w='25538' x='73231' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{AE1F49B6-931C-487B-9A78-387A2803711F}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+    <window class='worksheet' name='line (192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{900A1C09-C547-4360-A8C5-1615B14ACADD}' />
+    </window>
+    <window class='worksheet' maximized='true' name='scatter plot (192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3F172B21-B498-4D4A-ACE8-D8BDD1D48875}' />
+    </window>
+    <window class='dashboard' name='Dashboard (192524270)'>
+      <viewpoints>
+        <viewpoint name='bar(192524270)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='line (192524270)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='scatter plot (192524270)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{21B671E0-DDB2-477E-9DEB-6DE119FC3E23}' />
+    </window>
+    <window class='worksheet' name='bar(192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{611F9B68-CB0D-41B2-8234-7BD5174082D3}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='scatter plot (192524270)' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

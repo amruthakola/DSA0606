@@ -1,0 +1,754 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Customer Satisfaction (Customer_Satisfaction)' inline='true' name='federated.0labvu51q8yhe010xi5a70et3thn' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Customer_Satisfaction' name='excel-direct.14xaaln1r0i57u16v8geq14qlkmp'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/amrut/OneDrive/Desktop/Customer_Satisfaction.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.14xaaln1r0i57u16v8geq14qlkmp' name='Customer Satisfaction' table='[&apos;Customer Satisfaction$&apos;]' type='table'>
+          <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+            <column datatype='integer' name='Customer ID' ordinal='0' />
+            <column datatype='integer' name='Age' ordinal='1' />
+            <column datatype='integer' name='Satisfaction Score' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C6:no:A1:C6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Customer ID]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Satisfaction Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Satisfaction Score]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Satisfaction Score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+      </column>
+      <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+      <column caption='age group' datatype='string' name='[Calculation_1247967695360000]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Age] &lt;=29 THEN&quot;20-29&quot;&#13;&#10;ELSEIF [Age]&lt;=39 THEN &quot;30-39&quot;&#13;&#10;ELSE &quot;40+&quot;&#13;&#10;END' />
+      </column>
+      <column datatype='integer' name='[Customer ID]' role='dimension' type='ordinal' />
+      <column caption='Customer Satisfaction' datatype='table' name='[__tableau_internal_object_id__].[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/amrut/AppData/Local/Temp/TableauTemp/#TableauTemp_1em0i9d0k8pvsm1fxjzj11bsfr34.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/11/2026 05:16:49 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Customer ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Customer ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Customer ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Satisfaction Score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Satisfaction Score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Satisfaction Score</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Customer Satisfaction' id='Customer Satisfaction_EDD3AAE603FA405E9345E9AF60C7FFDB'>
+            <properties context=''>
+              <relation connection='excel-direct.14xaaln1r0i57u16v8geq14qlkmp' name='Customer Satisfaction' table='[&apos;Customer Satisfaction$&apos;]' type='table'>
+                <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='Customer ID' ordinal='0' />
+                  <column datatype='integer' name='Age' ordinal='1' />
+                  <column datatype='integer' name='Satisfaction Score' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Customer Satisfaction (Customer_Satisfaction_With_Feedback)' inline='true' name='federated.14emts511m59r31aja58q0sq2b99' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Customer_Satisfaction_With_Feedback' name='excel-direct.1u420ng06jsqhr1223dz01aovi2o'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/amrut/Downloads/Customer_Satisfaction_With_Feedback.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1u420ng06jsqhr1223dz01aovi2o' name='Customer Satisfaction' table='[&apos;Customer Satisfaction$&apos;]' type='table'>
+          <columns gridOrigin='A1:D6:no:A1:D6:0' header='yes' outcome='6'>
+            <column datatype='integer' name='Customer ID' ordinal='0' />
+            <column datatype='integer' name='Age' ordinal='1' />
+            <column datatype='integer' name='Satisfaction Score' ordinal='2' />
+            <column datatype='string' name='Feedback' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D6:no:A1:D6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Customer ID]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Satisfaction Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Satisfaction Score]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Satisfaction Score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Feedback</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Feedback]</local-name>
+            <parent-name>[Customer Satisfaction]</parent-name>
+            <remote-alias>Feedback</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Customer ID]' role='dimension' type='ordinal' />
+      <column caption='Customer Satisfaction' datatype='table' name='[__tableau_internal_object_id__].[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/amrut/AppData/Local/Temp/TableauTemp/#TableauTemp_1yaxp6o0w1e9w316uzfn30vlncxr.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/11/2026 07:45:19 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Customer ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Customer ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Customer ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Satisfaction Score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Satisfaction Score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Satisfaction Score</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Feedback</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Feedback]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Feedback</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Customer Satisfaction</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Customer Satisfaction' id='Customer Satisfaction_BDCCB9CE158E4DE3A6DCE1CD3F2C8005'>
+            <properties context=''>
+              <relation connection='excel-direct.1u420ng06jsqhr1223dz01aovi2o' name='Customer Satisfaction' table='[&apos;Customer Satisfaction$&apos;]' type='table'>
+                <columns gridOrigin='A1:D6:no:A1:D6:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='Customer ID' ordinal='0' />
+                  <column datatype='integer' name='Age' ordinal='1' />
+                  <column datatype='integer' name='Satisfaction Score' ordinal='2' />
+                  <column datatype='string' name='Feedback' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='FEEDBACK(192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer Satisfaction (Customer_Satisfaction_With_Feedback)' name='federated.14emts511m59r31aja58q0sq2b99' />
+          </datasources>
+          <datasource-dependencies datasource='federated.14emts511m59r31aja58q0sq2b99'>
+            <column datatype='string' name='[Feedback]' role='dimension' type='nominal' />
+            <column-instance column='[Feedback]' derivation='None' name='[none:Feedback:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <color column='[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]' />
+              <size column='[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]' />
+              <text column='[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C1716E2F-7E69-41CD-984C-E50F333B4013}' />
+    </worksheet>
+    <worksheet name='STACKED(192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer Satisfaction (Customer_Satisfaction)' name='federated.0labvu51q8yhe010xi5a70et3thn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0labvu51q8yhe010xi5a70et3thn'>
+            <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+            <column caption='age group' datatype='string' name='[Calculation_1247967695360000]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Age] &lt;=29 THEN&quot;20-29&quot;&#13;&#10;ELSEIF [Age]&lt;=39 THEN &quot;30-39&quot;&#13;&#10;ELSE &quot;40+&quot;&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[Customer ID]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Satisfaction Score]' role='measure' type='quantitative' />
+            <column-instance column='[Customer ID]' derivation='Count' name='[cnt:Customer ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1247967695360000]' derivation='None' name='[none:Calculation_1247967695360000:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Satisfaction Score]' derivation='Sum' name='[sum:Satisfaction Score:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0labvu51q8yhe010xi5a70et3thn].[sum:Satisfaction Score:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0labvu51q8yhe010xi5a70et3thn].[cnt:Customer ID:qk]</rows>
+        <cols>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Calculation_1247967695360000:nk]</cols>
+      </table>
+      <simple-id uuid='{05DD194A-0D1A-4DAA-8BF8-974FE5EDA52A}' />
+    </worksheet>
+    <worksheet name='histogram(192524270)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer Satisfaction (Customer_Satisfaction)' name='federated.0labvu51q8yhe010xi5a70et3thn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0labvu51q8yhe010xi5a70et3thn'>
+            <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+            </column>
+            <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+            <column-instance column='[Age]' derivation='Count' name='[cnt:Age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+          </pane>
+        </panes>
+        <rows>[federated.0labvu51q8yhe010xi5a70et3thn].[cnt:Age:qk]</rows>
+        <cols>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Age (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Age (bin):qk]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{FD057BD9-929A-48A3-9D25-E437DC76AF34}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+    <window class='worksheet' name='histogram(192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Age (bin):ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3B668228-DE15-4481-93D4-0A8589F14338}' />
+    </window>
+    <window class='worksheet' name='STACKED(192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0labvu51q8yhe010xi5a70et3thn].[sum:Satisfaction Score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Calculation_1247967695360000:nk]</field>
+            <field>[federated.0labvu51q8yhe010xi5a70et3thn].[none:Customer ID:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7464539F-5C88-4398-AC58-40B6E46B5B39}' />
+    </window>
+    <window class='worksheet' maximized='true' name='FEEDBACK(192524270)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]' type='size' />
+            <card pane-specification-id='0' param='[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.14emts511m59r31aja58q0sq2b99].[none:Feedback:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E8E680B9-21D3-4E08-83C9-B2D89A43A31E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='FEEDBACK(192524270)' width='192'>
+      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
+      Zq/Yp+5qWt9yOD5kWl4w7m+RJRmz9YxI5KA4BDbfMQbZgM+uH7LVn5AmGbP1JbfGLzHIBy/8
+      mX4jAYh80bJeMOoVJO67tTEqADHtu5WjyP+ZAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKa
+      AhDTFICYpgDENAUgpikAMU0BiGkKQExTAGKaAhDTFICYpgDENAUgpv0dnhfeNqpa9dAAAAAA
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='STACKED(192524270)' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='histogram(192524270)' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

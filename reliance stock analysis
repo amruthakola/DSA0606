@@ -1,0 +1,475 @@
+library(quantmod)
+library(ggplot2)
+
+# Download Reliance Industries data from Yahoo Finance
+getSymbols("RELIANCE.NS",
+           src = "yahoo",
+           from = Sys.Date() - 365,
+           to = Sys.Date())
+
+# Convert to data frame
+reliance_data <- data.frame(
+  Date = index(RELIANCE.NS),
+  Close = as.numeric(Cl(RELIANCE.NS))
+)
+
+# Display first few rows
+head(reliance_data)
+
+# Display last few rows
+tail(reliance_data)
+# Make sure Date is in Date format
+reliance_data$Date <- as.Date(reliance_data$Date)
+
+# -------------------------------
+# 1. LAST 3 TRADING DAYS
+# -------------------------------
+
+data_3days <- tail(reliance_data, 3)
+
+ggplot(data_3days, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Reliance Industries - Last 3 Trading Days",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+
+
+# -------------------------------
+# 2. LAST 5 TRADING DAYS
+# -------------------------------
+
+data_5days <- tail(reliance_data, 5)
+
+ggplot(data_5days, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Reliance Industries - Last 5 Trading Days",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+
+
+# -------------------------------
+# 3. LAST 1 WEEK
+# -------------------------------
+
+one_week_date <- max(reliance_data$Date) - 7
+
+data_1week <- subset(
+  reliance_data,
+  Date >= one_week_date
+)
+
+ggplot(data_1week, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Reliance Industries - 1 Week",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+
+
+# -------------------------------
+# 4. LAST 1 MONTH
+# -------------------------------
+
+one_month_date <- max(reliance_data$Date) - 30
+
+data_1month <- subset(
+  reliance_data,
+  Date >= one_month_date
+)
+
+ggplot(data_1month, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Reliance Industries - 1 Month",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+
+
+# -------------------------------
+# 5. LAST 6 MONTHS
+# -------------------------------
+
+six_month_date <- max(reliance_data$Date) - 180
+
+data_6months <- subset(
+  reliance_data,
+  Date >= six_month_date
+)
+
+ggplot(data_6months, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Reliance Industries - 6 Months",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+
+
+# -------------------------------
+# 6. LAST 1 YEAR
+# -------------------------------
+
+data_1year <- reliance_data
+
+ggplot(data_1year, aes(x = Date, y = Close)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Reliance Industries - 1 Year",
+    x = "Date",
+    y = "Closing Price (₹)"
+  ) +
+  theme_minimal()
+library(TTR)
+
+reliance_data$MA_3Day <- SMA(reliance_data$Close, n = 3)
+reliance_data$MA_5Day <- SMA(reliance_data$Close, n = 5)
+reliance_data$MA_2Week <- SMA(reliance_data$Close, n = 10)
+reliance_data$MA_1Month <- SMA(reliance_data$Close, n = 21)
+reliance_data$MA_6Month <- SMA(reliance_data$Close, n = 126)
+reliance_data$MA_1Year <- SMA(reliance_data$Close, n = 250)
+names(reliance_data)
+reliance_data$MA_3Day <- SMA(reliance_data$Close, n = 3)
+
+reliance_data$MA_5Day <- SMA(reliance_data$Close, n = 5)
+
+reliance_data$MA_2Week <- SMA(reliance_data$Close, n = 10)
+
+reliance_data$MA_1Month <- SMA(reliance_data$Close, n = 21)
+
+reliance_data$MA_6Month <- SMA(reliance_data$Close, n = 126)
+
+reliance_data$MA_1Year <- SMA(reliance_data$Close, n = 250)
+names(reliance_data)
+reliance_data$MA_3Day <- SMA(reliance_data$Close, n = 3)
+names(reliance_data)
+reliance_data$MA_5Day <- SMA(reliance_data$Close, n = 5)
+reliance_data$MA_2Week <- SMA(reliance_data$Close, n = 10)
+reliance_data$MA_1Month <- SMA(reliance_data$Close, n = 21)
+reliance_data$MA_6Month <- SMA(reliance_data$Close, n = 126)
+reliance_data$MA_1Year <- SMA(reliance_data$Close, n = 250)
+names(reliance_data)
+reliance_data$MA_3Day <- SMA(reliance_data$Close, n = 3)
+names(reliance_data)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "3-Day Moving Average")
+
+lines(reliance_data$Date,
+      reliance_data$MA_3Day)
+head(reliance_data)
+reliance_data$Date <- as.Date(reliance_data$Date)
+reliance_data$MA_3Day <- SMA(reliance_data$Close, n = 3)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "3-Day Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_3Day)
+reliance_data$MA_5Day <- SMA(reliance_data$Close, n = 5)
+names(reliance_data)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "5-Day Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_5Day)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "2-Week Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_2Week)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "1-Month Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_1Month)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "6-Month Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_6Month)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "1-Year Moving Average")
+lines(reliance_data$Date,
+      reliance_data$MA_1Year)
+names(reliance_data)
+tail(reliance_data, 1)
+Today_Average <- (Open + High + Low + Close) / 4
+today_close <- tail(reliance_data$Close, 1)
+today_close
+tail(reliance_data$Close, 1)
+tail(reliance_data[, c("Date", "Close")], 1)
+mean(tail(reliance_data[, c("MA_3Day",
+                            "MA_5Day",
+                            "MA_2Week",
+                            "MA_1Month",
+                            "MA_6Month",
+                            "MA_1Year")], 1),
+     na.rm = TRUE)
+str(reliance_data)
+reliance_data$MA_3Day <- as.numeric(reliance_data$MA_3Day)
+
+reliance_data$MA_5Day <- as.numeric(reliance_data$MA_5Day)
+
+reliance_data$MA_2Week <- as.numeric(reliance_data$MA_2Week)
+
+reliance_data$MA_1Month <- as.numeric(reliance_data$MA_1Month)
+
+reliance_data$MA_6Month <- as.numeric(reliance_data$MA_6Month)
+
+reliance_data$MA_1Year <- as.numeric(reliance_data$MA_1Year)
+today_average <- mean(
+  c(
+    tail(reliance_data$MA_3Day, 1),
+    tail(reliance_data$MA_5Day, 1),
+    tail(reliance_data$MA_2Week, 1),
+    tail(reliance_data$MA_1Month, 1),
+    tail(reliance_data$MA_6Month, 1),
+    tail(reliance_data$MA_1Year, 1)
+  ),
+  na.rm = TRUE
+)
+
+today_average
+str(reliance_data)
+tail(reliance_data, 1)
+today_average <- mean(c(
+  1313.4,
+  1315.64,
+  1318.54,
+  1306.543,
+  1342.396
+))
+
+today_average
+today_average <- mean(c(
+  tail(reliance_data$MA_3Day, 1),
+  tail(reliance_data$MA_5Day, 1),
+  tail(reliance_data$MA_2Week, 1),
+  tail(reliance_data$MA_1Month, 1),
+  tail(reliance_data$MA_6Month, 1)
+), na.rm = TRUE)
+today_average
+tail(reliance_data[, c(
+  "Date",
+  "Close",
+  "MA_3Day",
+  "MA_5Day",
+  "MA_2Week",
+  "MA_1Month",
+  "MA_6Month"
+)], 1)
+reliance_data$Trend_Signal <- ifelse(
+  reliance_data$Close > reliance_data$MA_3Day &
+    reliance_data$Close > reliance_data$MA_5Day &
+    reliance_data$Close > reliance_data$MA_2Week,
+  "UPTREND",
+  "DOWNTREND"
+)
+tail(reliance_data[, c("Date", "Close", "MA_3Day",
+                       "MA_5Day", "MA_2Week",
+                       "Trend_Signal")], 1)
+reliance_data$Up_Score <- rowSums(
+  cbind(
+    reliance_data$Close > reliance_data$MA_3Day,
+    reliance_data$Close > reliance_data$MA_5Day,
+    reliance_data$Close > reliance_data$MA_2Week,
+    reliance_data$Close > reliance_data$MA_1Month,
+    reliance_data$Close > reliance_data$MA_6Month
+  ),
+  na.rm = TRUE
+)
+reliance_data$Trend <- ifelse(
+  reliance_data$Up_Score >= 3,
+  "UPTREND",
+  "DOWNTREND"
+)
+tail(reliance_data[, c(
+  "Date",
+  "Close",
+  "MA_3Day",
+  "MA_5Day",
+  "MA_2Week",
+  "MA_1Month",
+  "MA_6Month",
+  "Up_Score",
+  "Trend"
+)], 1)
+tail(reliance_data[, c(
+  "Date",
+  "Close",
+  "MA_3Day",
+  "MA_5Day",
+  "MA_2Week",
+  "MA_1Month",
+  "MA_6Month",
+  "Up_Score",
+  "Trend"
+)], 1)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "l",
+     xlab = "Date",
+     ylab = "Price",
+     main = "Reliance Industries Uptrend and Downtrend")
+
+lines(reliance_data$Date, reliance_data$MA_3Day)
+lines(reliance_data$Date, reliance_data$MA_5Day)
+lines(reliance_data$Date, reliance_data$MA_2Week)
+lines(reliance_data$Date, reliance_data$MA_1Month)
+lines(reliance_data$Date, reliance_data$MA_6Month)
+legend("topleft",
+       legend = c("Close", "3-Day MA", "5-Day MA",
+                  "2-Week MA", "1-Month MA", "6-Month MA"),
+       lty = 1)
+reliance_data$Trend <- ifelse(
+  reliance_data$MA_5Day > reliance_data$MA_1Month,
+  "UPTREND",
+  "DOWNTREND"
+)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "n",
+     xlab = "Date",
+     ylab = "Closing Price",
+     main = "Reliance Industries Uptrend and Downtrend")
+
+for(i in 2:nrow(reliance_data)) {
+  
+ 
+
+legend("bottomright",
+       legend = c("UPTREND", "DOWNTREND"),
+       col = c("green", "red"),
+       lty = 1,
+       lwd = 3,
+       bty = "n")
+reliance_data$Trend <- ifelse(
+  reliance_data$MA_5Day > reliance_data$MA_1Month,
+  "UPTREND",
+  "DOWNTREND"
+)
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "n",
+     xlab = "Date",
+     ylab = "Closing Price",
+     main = "Reliance Industries Trend")
+
+for(i in 2:nrow(reliance_data)) {
+  
+  if(reliance_data$Trend[i] == "UPTREND") {
+    
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "green",
+          lwd = 2)
+    
+  } else {
+    
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "red",
+          lwd = 2)
+  }
+}
+
+legend("topleft",
+       legend = c("UPTREND", "DOWNTREND"),
+       col = c("green", "red"),
+       lty = 1,
+       lwd = 3,
+       bty = "n")
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "n",
+     xlab = "Date",
+     ylab = "Closing Price",
+     main = "Reliance Industries Trend")
+
+for(i in 2:nrow(reliance_data)) {
+  
+  if(reliance_data$Trend[i] == "UPTREND") {
+    
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "green",
+          lwd = 2)
+    
+  } else {
+    
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "red",
+          lwd = 2)
+  }
+}
+
+legend("topleft",
+       legend = c("UPTREND", "DOWNTREND"),
+       col = c("green", "red"),
+       lty = 1,
+       lwd = 3,
+       bty = "n")
+plot(reliance_data$Date,
+     reliance_data$Close,
+     type = "n",
+     xlab = "Date",
+     ylab = "Closing Price",
+     main = "Reliance Industries Uptrend and Downtrend")
+
+for(i in 2:nrow(reliance_data)) {
+  
+  if(reliance_data$Trend[i] == "UPTREND") {
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "green",
+          lwd = 2)
+  } else {
+    lines(reliance_data$Date[(i-1):i],
+          reliance_data$Close[(i-1):i],
+          col = "red",
+          lwd = 2)
+  }
+}
+
+legend("bottomright",
+       legend = c("UPTREND", "DOWNTREND"),
+       col = c("green", "red"),
+       lty = 1,
+       lwd = 3,
+       bty = "n")
